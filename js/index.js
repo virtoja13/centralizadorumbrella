@@ -23,6 +23,7 @@ $(document).ready(function(){
 		$("#divInfoGeneral").hide();
 		$("#divRegistrarUsuarios").hide();
 		$("#divUsuariosOp").hide();
+		$("#divOper").show();
 		$("#divGestionOp").show();
 		$("#h2GestionOperador").text(" Operadores");
 		$("#ulRuta").html(ruta);
@@ -32,6 +33,7 @@ $(document).ready(function(){
 		ruta = '<li><a href="#">Home</a></li><li><a href="#">Gestión de Usuarios</a></li><li><a href="#">Usuarios por Operador</a></li>';
 		$("#divInfoGeneral").hide();
 		$("#divRegistrarUsuarios").hide();
+		$("#divOper").hide();
 		$("#divUsuariosOp").show();
 		$("#divGestionOp").show();
 		$("#h2GestionOperador").text(" Usuarios por Operador");
