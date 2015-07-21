@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        ===
+        This comment should NOT be removed.
+
+        Charisma v2.0.0
+
+        Copyright 2012-2014 Muhammad Usman
+        Licensed under the Apache License v2.0
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        http://usman.it
+        http://twitter.com/halalit_usman
+        ===
+    -->
+    <meta charset="utf-8">
+    <title>Ubox - Operador Carpeta Ciudadana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Umbrella Corp.">
+
+    <!-- The styles -->
+    <link id="bs-css" href="css/bootstrap-simplex.min.css" rel="stylesheet">
+
+    <link href="css/charisma-app.css" rel="stylesheet">
+    <link href='bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+    <link href='bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
+    <link href='css/jquery.noty.css' rel='stylesheet'>
+    <link href='css/noty_theme_default.css' rel='stylesheet'>
+    <link href='css/elfinder.min.css' rel='stylesheet'>
+    <link href='css/elfinder.theme.css' rel='stylesheet'>
+    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='css/uploadify.css' rel='stylesheet'>
+    <link href='css/animate.min.css' rel='stylesheet'>
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+</head>
+
+<body>
+    <!-- topbar starts -->
+    <div class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-inner">   
+            <img alt="Ubox" src="img/logo20.png" class="hidden-xs"/> 
+
+            <!-- user dropdown starts -->
+            <div class="btn-group pull-right">				
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Admin</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Mi cuenta</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </div>
+            <!-- user dropdown ends -->         
+
+        </div>
+    </div>
+    <!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+        
+        <!-- left menu starts -->
+        <div class="col-sm-2 col-lg-2">
+            <div class="sidebar-nav">
+                <div class="nav-canvas">
+                    <div class="nav-sm nav nav-stacked">
+
+                    </div>
+                     <ul class="nav nav-pills nav-stacked main-menu">                         
+                        <li><a class="ajax-link" href="indexAdmin.html"><i class="glyphicon glyphicon-home"></i><span> Inicio</span></a>
+                        </li>
+
+						<li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Usuarios Ubox</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="registro.html">Registro</a></li>
+                                <li><a href="consultaUsuarios.html">Consulta</a></li>
+                            </ul>
+                        </li>
+						 <li><a class="ajax-link" href="reportesAdmin.html"><i class="glyphicon glyphicon-list-alt"></i><span> Reportes</span></a>
+                        </li>
+						<li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Mi cuenta</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="misDatosAdmin.html">Mis Datos</a></li>
+                                <li><a href="contrasenaAdmin.html">Cambiar Contraseña</a></li>
+                            </ul>
+                        </li>                          
+                    </ul>                      
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!-- left menu ends -->
+
+        <noscript>
+            <div class="alert alert-block col-md-12">
+                <h4 class="alert-heading">Warning!</h4>
+
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+    <ul class="breadcrumb">
+        <li>
+                <a href="#">Ubox</a>
+            </li>
+            <li>
+                <a href="#">Usuarios Ubox</a>
+            </li>
+        <li>
+            <a href="#">Registro</a>
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i> Registro de Datos</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+			
+				<table width="100%">
+					<tr>
+						<td colspan="4">
+							<div class="pull-right">
+								<h4>Formulario N° 458</h4>
+							</div>
+						</td>
+					</tr>
+					<tr style="border-top:groove">
+						<td width="">Tipo Documento:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Cédula Ciudadanía</option>
+									<option>Cédula Extranjería</option>
+									<option>Tarjeta de Identidad</option>
+									<option>Registro Civil</option>
+									<option>Pasaporte</option>
+									<option>Carné Diplomático</option>
+								</select>
+							</div>
+						</td>
+						<td>Número Documento:</td>
+						<td>
+							 <input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>
+						
+					</tr>
+					<tr >
+						<td>Departamento de Expedición del Documento:
+						</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Amazonas</option>
+									<option>Bolívar</option>
+									<option>Casanare</option>
+									<option>Cundinamarca</option>
+									<option>Magdalena</option>
+									<option>Putumayo</option>
+								</select>
+							</div>
+						</td>
+						</td>
+						<td>Municipio de Expedición del Documento:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Abejorral</option>
+									<option>Bello</option>
+									<option>Caceres</option>
+									<option>Envigado</option>
+									<option>La Estrella</option>
+									<option>Sabaneta</option>
+								</select>
+							</div>
+						</td>						
+					</tr>
+					
+					<tr style="border-bottom:groove">
+						<td>Fecha de Expedición del Documento:</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px" placeholder="yyyy/MM/dd">
+						</td>	
+						<td></td>
+						<td>			
+						</td>						
+					</tr>
+					
+				</table>
+			
+				<table>
+					<tr>
+						<td>Primer Nombre:</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>
+						<td>Segundo Nombre:</td>
+						<td>	
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">		
+						</td>			
+					</tr>	
+					<tr>
+						<td>Primer Apellido:</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>
+						<td>Segundo Apellido:</td>
+						<td>	
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">		
+						</td>
+						
+					</tr>					
+				</table>
+				
+				<table width="100%">
+					<tr style="border-top:groove">
+						<td>Genero:</td>
+						<td>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+									Femenino
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+									Masculino
+								</label>
+							</div>
+						</td>
+						<td>Fecha de Nacimiento:</td>
+						<td>	
+							<input type="text" class="form-control" id="inputSuccess1" size="20px" placeholder="yyyy/MM/dd">		
+						</td>		
+						<td>Departamento de Nacimiento:
+						</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Amazonas</option>
+									<option>Bolívar</option>
+									<option>Casanare</option>
+									<option>Cundinamarca</option>
+									<option>Magdalena</option>
+									<option>Putumayo</option>
+								</select>
+							</div>
+						</td>	
+					</tr>	
+					<tr>
+						<td>Municipio de Nacimiento:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Abejorral</option>
+									<option>Bello</option>
+									<option>Caceres</option>
+									<option>Envigado</option>
+									<option>La Estrella</option>
+									<option>Sabaneta</option>
+								</select>
+							</div>
+						</td>		
+						<td>Nacionalidad:</td>
+						<td>	
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Argentino</option>
+									<option>Chileno</option>
+									<option>Colombiano</option>
+									<option>Uruguayo</option>
+									<option>Ecuatoriano</option>
+								</select>
+							</div>
+						</td>
+						
+					</tr>					
+				</table>
+			
+			
+				<table width="100%">
+					<tr style="border-top:groove">
+						<td>Departamento Residencia:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Amazonas</option>
+									<option>Bolívar</option>
+									<option>Casanare</option>
+									<option>Cundinamarca</option>
+									<option>Magdalena</option>
+									<option>Putumayo</option>
+								</select>
+							</div>
+						</td>
+						<td>Municipio Residencia:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Abejorral</option>
+									<option>Bello</option>
+									<option>Caceres</option>
+									<option>Envigado</option>
+									<option>La Estrella</option>
+									<option>Sabaneta</option>
+								</select>
+							</div>
+						</td>			
+						<td>Dirección Residencia:
+						</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>	
+					</tr>	
+					<tr>
+						<td>Departamento Correspondencia:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Amazonas</option>
+									<option>Bolívar</option>
+									<option>Casanare</option>
+									<option>Cundinamarca</option>
+									<option>Magdalena</option>
+									<option>Putumayo</option>
+								</select>
+							</div>
+						</td>
+						<td>Municipio Correspondencia:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Abejorral</option>
+									<option>Bello</option>
+									<option>Caceres</option>
+									<option>Envigado</option>
+									<option>La Estrella</option>
+									<option>Sabaneta</option>
+								</select>
+							</div>
+						</td>			
+						<td>Dirección Correspondencia:
+						</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>	
+					</tr>						
+				</table>
+				
+				
+				
+				
+				
+				
+				
+				<table width="100%">
+					<tr style="border-top:groove">
+						<td>Teléfono:</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>
+						<td>Correo Electrónico:</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>			
+						<td>Estado Civil:
+						</td>
+						<td>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+									Soltero
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+									Casado
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+									Viudo
+								</label>
+							</div>
+						</td>	
+					</tr>	
+					<tr style="border-bottom:groove">
+						<td>Departamento Sitio Laboral:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Amazonas</option>
+									<option>Bolívar</option>
+									<option>Casanare</option>
+									<option>Cundinamarca</option>
+									<option>Magdalena</option>
+									<option>Putumayo</option>
+								</select>
+							</div>
+						</td>
+						<td>Municipio Sitio Laboral:</td>
+						<td>
+							<div class="controls">
+								<select id="selectError" data-rel="chosen">
+									<option>Abejorral</option>
+									<option>Bello</option>
+									<option>Caceres</option>
+									<option>Envigado</option>
+									<option>La Estrella</option>
+									<option>Sabaneta</option>
+								</select>
+							</div>
+						</td>			
+						<td>Dirección Sitio Laboral:
+						</td>
+						<td>
+							<input type="text" class="form-control" id="inputSuccess1" size="20px">
+						</td>	
+					</tr>	
+					<tr>
+						<td colspan="6"><br/><button type="submit" class="btn btn-success pull-right">Registrar Usuario</button></td>
+					</tr>
+										
+				</table>
+			
+			
+			
+			
+				
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div><!--/row-->
+
+
+    <!-- content ends -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+
+    <!-- Ad, you can remove it -->
+    <div class="row">
+        <div class="col-md-9 col-lg-9 col-xs-9  hidden-xs">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Charisma Demo 2 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-5108790028230107"
+                 data-ad-slot="3193373905"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+       
+    </div>
+    <!-- Ad ends -->
+
+    <hr>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h3>Settings</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Here settings can be configured...</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="row">
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
+                Usman</a> 2012 - 2014</p>
+
+        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+    </footer>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="js/jquery.cookie.js"></script>
+<!-- calender plugin -->
+<script src='bower_components/moment/min/moment.min.js'></script>
+<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<!-- data table plugin -->
+<script src='js/jquery.dataTables.min.js'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<script src="bower_components/responsive-tables/responsive-tables.js"></script>
+<!-- tour plugin -->
+<script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rating plugin -->
+<script src="js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="js/charisma.js"></script>
+
+
+</body>
+</html>
+
