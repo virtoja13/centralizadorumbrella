@@ -31,6 +31,7 @@ $(document).ready(function(){
 		$("#divUsuariosOp").hide();
 		$("#divOper").show();
 		$("#divGestionOp").show();
+		$("#aCrearOperador").show();
 		$("#h2GestionOperador").text(" Operadores");
 		$("#ulRuta").html(ruta);
     });
@@ -40,6 +41,7 @@ $(document).ready(function(){
 		$("#divInfoGeneral").hide();
 		$("#divRegistrarUsuarios").hide();
 		$("#divOper").hide();
+		$("#aCrearOperador").hide();
 		$("#divUsuariosOp").show();
 		$("#divGestionOp").show();
 		$("#h2GestionOperador").text(" Usuarios por Operador");
