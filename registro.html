@@ -86,25 +86,28 @@
 
                     </div>
                      <ul class="nav nav-pills nav-stacked main-menu">                         
-                        <li><a class="ajax-link" href="indexAdmin.html"><i class="glyphicon glyphicon-home"></i><span> Inicio</span></a>
-                        </li>
-
-						<li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Usuarios Ubox</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="registro.html">Registro</a></li>
-                                <li><a href="consultaUsuarios.html">Consulta</a></li>
-                            </ul>
-                        </li>
-						 <li><a class="ajax-link" href="reportesAdmin.html"><i class="glyphicon glyphicon-list-alt"></i><span> Reportes</span></a>
-                        </li>
-						<li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Mi cuenta</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="misDatosAdmin.html">Mis Datos</a></li>
-                                <li><a href="contrasenaAdmin.html">Cambiar Contraseña</a></li>
-                            </ul>
-                        </li>                          
+                        <li class="nav-header">Menu</li>
+							<li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Inicio</span></a>
+							</li>
+							<li class="accordion">
+								<a href="#"><i class="glyphicon glyphicon-plus"></i><span> Gestión de Usuarios</span></a>
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="registro.html" id="aRegistrarUsuariosId"> Registrar Usuarios</a></li>
+									<li><a href="consultaUsuarios.html" id="aConsultarUsuarios"> Consultar Usuarios</a></li>
+								</ul>
+							</li>
+							<li class="accordion">
+								<a href="#"><i class="glyphicon glyphicon-plus"></i><span> Gestión Operadores</span></a>
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#" id="aOperadores"> Operadores</a></li>
+									<li><a href="#" id="aUsuarioXOp"> Usuarios por Operador</a></li>
+								</ul>
+							</li>
+							
+							<li><a class="ajax-link" href="reportesAdmin.html"><i class="glyphicon glyphicon-list-alt"></i><span> Reportes</span></a>
+							</li>
+							<li><a class="ajax-link" href="calendar.html"><i class="glyphicon glyphicon-calendar"></i><span> Calendar</span></a>
+							</li>                 
                     </ul>                      
                 </div>
             </div>
