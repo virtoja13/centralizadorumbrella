@@ -71,7 +71,7 @@
 			
 			
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Admin</span>
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> usuario</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -101,17 +101,17 @@
 							<li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Inicio</span></a>
 							</li>
 							<li class="accordion">
-								<a href="#"><i class="glyphicon glyphicon-plus"></i><span> Gestión de Usuarios</span></a>
+								<a href="#"><i class="glyphicon glyphicon-plus"></i><span> Gesti&oacute;n de Usuarios</span></a>
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href="registro.html" id="aRegistrarUsuariosId"> Registrar Usuarios</a></li>
 									<li><a href="consultaUsuarios.html" id="aConsultarUsuarios"> Consultar Usuarios</a></li>
 								</ul>
 							</li>
 							<li class="accordion">
-								<a href="#"><i class="glyphicon glyphicon-plus gestion"></i><span> Gestión Operadores</span></a>
+								<a href="#"><i class="glyphicon glyphicon-plus"></i><span> Gesti&oacute;n Operadores</span></a>
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="" id="aOperadores"> Operadores</a></li>
-									<li><a href="usuarioXOperadores.html" id="aUsuarioXOp"> Usuarios por Operador</a></li>
+									<li><a class="ajax-link" href="operadores.html" id="aOperadores"> Operadores</a></li>
+									<li><a href="" id="aUsuarioXOp"> Usuarios por Operador</a></li>
 								</ul>
 							</li>
 							
@@ -124,39 +124,36 @@
 			<!--/span-->
 			<!-- left menu ends -->
 
-			 <noscript>
-            <div class="alert alert-block col-md-12">
-                <h4 class="alert-heading">Warning!</h4>
+			<noscript>
+				<div class="alert alert-block col-md-12">
+					<h4 class="alert-heading">Warning!</h4>
 
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                    enabled to use this site.</p>
-            </div>
-        </noscript>
+					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+						enabled to use this site.</p>
+				</div>
+			</noscript>
 
-        <div id="content" class="col-lg-10 col-sm-10">
-            <!-- content starts -->
-            <div>
-    <ul class="breadcrumb">
-        <li>
-            <a href="#">Ubox</a>
-        </li>
-		<li>
-            <a href="#">Gestión Operadores</a>
-        </li>
-        <li>
-            <a href="#">Operadores</a>
-        </li>
-    </ul>
-</div>
-
-
-				
+			<div id="content" class="col-lg-10 col-sm-10">
+				<!-- content starts -->]
+				<div>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Ubox</a>
+						</li>
+						<li>
+							<a href="#">Gesti&oacute;n Operadores</a>
+						</li>
+						<li>
+							<a href="#">Usuarios por Operador</a>
+						</li>
+					</ul>
+				</div>
 				
 				<div class="row" id="divGestionOp">
 					<div class="box col-md-12">
 						<div class="box-inner">
 							<div class="box-header well">
-								<h2><i class="glyphicon glyphicon-user"></i> Operadores</h2>
+								<h2 id="h2GestionOperador"><i class="glyphicon glyphicon-info-sign"> Configuraci&oacute;n</i></h2>
 								<div class="box-icon">
 									<a href="#" class="btn btn-setting btn-round btn-default"><i
 											class="glyphicon glyphicon-cog"></i></a>
@@ -168,176 +165,87 @@
 							</div>
 							<div>
 								<br>
-								<a class="btn btn-primary" href="#" id="aCrearOperador">
-									<i class="glyphicon glyphicon-edit"></i>
-									Crear Operador
-								</a>
-								<br>
-								<br>
-								<div id="divOper" >
-									<table class="table table-striped bootstrap-datatable datatable responsive">
-										<thead>
+
+								<div id="divUsuariosOp">
+									<select>
+										<option>Ubox</option>
+										<option>Carpeta Personal</option>
+										<option>Carpeta Ciudadana</option>
+										<option>Inbox civil</option>
+										<option>Info Personal</option>
+										<option>...</option>
+									</select>
+									<a class="btn btn-primary" href="#" id="aBuscarUsuario">
+										<i class="glyphicon glyphicon-search"></i>
+										Buscar
+									</a>
+									<br>
+									<br>
+									<div>
+										<table class="table table-condensed">
+											<thead>
 											<tr>
-												<th>Operador</th>
-												<th>Fecha registro</th>
-												<th>Acciones</th>
+												<th>Usuario</th>
+												<th>Fecha de Registro</th>
+												<th>Rol</th>
+												<th>Estado</th>
 											</tr>
-										</thead>
-										<tbody>
+											</thead>
+											<tbody>
 											<tr>
-												<td>Ubox</td>
+												<td>Claro</td>
 												<td class="center">2012/01/01</td>
+												<td class="center">Empresa Privada</td>
 												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
+													<span class="label-success label label-default">Active</span>
 												</td>
 											</tr>
 											<tr>
-												<td>Carpeta Personal</td>
-												<td class="center">2012/01/01</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Carpeta Ciudadana</td>
-												<td class="center">2012/01/01</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Correo estatal</td>
-												<td class="center">2012/01/01</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Inbox estado</td>
+												<td>Ecopetrol</td>
 												<td class="center">2012/02/01</td>
+												<td class="center">Empresa Publica</td>
 												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
+													<span class="label-default label label-danger">Banned</span>
 												</td>
 											</tr>
 											<tr>
-												<td>Operador 1</td>
+												<td>Sheikh Heera</td>
 												<td class="center">2012/02/01</td>
+												<td class="center">Persona Natural</td>
 												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
+													<span class="label-default label">Inactive</span>
 												</td>
 											</tr>
 											<tr>
-												<td>Operador 2</td>
+												<td>Saruar</td>
 												<td class="center">2012/03/01</td>
+												<td class="center">Persona Natural</td>
 												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
+													<span class="label-warning label label-default">Pending</span>
 												</td>
 											</tr>
 											<tr>
-												<td>Operador 3</td>
-												<td class="center">2012/03/01</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Operador 4</td>
+												<td>Sana Amrin</td>
 												<td class="center">2012/01/21</td>
+												<td class="center">Persona Natural</td>
 												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
+													<span class="label-success label label-default">Active</span>
 												</td>
 											</tr>
-											<tr>
-												<td>Operador 5</td>
-												<td class="center">2012/01/21</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Operador 6</td>
-												<td class="center">2012/08/23</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Operador 7</td>
-												<td class="center">2012/08/23</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Operador 8</td>
-												<td class="center">2012/06/01</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Operador 9</td>
-												<td class="center">2012/06/01</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-											<tr>
-												<td>Operador 10</td>
-												<td class="center">2012/03/01</td>
-												<td class="center">
-													<i class="glyphicon glyphicon-zoom-in icon-white mypropover" data-toggle="popover" style="cursor: pointer" data-html="true"
-														data-content="<p  onclick='elimUsuario(event)' style='cursor: pointer'>Inactivar operador</p><p onclick='modOperador(event)' style='cursor: pointer'>Modificar operador</p>"
-														title="Opciones">
-													</i>
-												</td>
-											</tr>
-										</tbody>
-									</table>
+											</tbody>
+										</table>
+										<ul class="pagination pagination-centered">
+											<li><a href="#">Prev</a></li>
+											<li class="active">
+												<a href="#">1</a>
+											</li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">4</a></li>
+											<li><a href="#">Next</a></li>
+										</ul>
+									</div>
 								</div>
-								
 							</div>
 						</div>
 					</div>
@@ -349,32 +257,13 @@
 	</div><!--/fluid-row-->
 
     <hr>
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h3>Settings</h3>
-                </div>
-                <div class="modal-body">
-                    <p>Here settings can be configured...</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-                    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
-                </div>
-            </div>
-        </div>
-    </div>
 	
 	<div class="modal fade" id="modalElimOperador" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <button type="button" class="close" data-dismiss="modal">�</button>
                     <h3>Inactivar operador</h3>
                 </div>
                 <div class="modal-body">
@@ -395,7 +284,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">�</button>
+					<button type="button" class="close" data-dismiss="modal">?</button>
 					<h3>Modificar Operador</h3>
 				</div>
 				<div class="modal-body">
@@ -405,15 +294,15 @@
 							<td width="80%"><input type="text" class="form-control" value="AAA-555-41B"></td>
 						</tr>
 						<tr>
-							<td width="20%">Razón Social:</td>
-							<td width="80%"><input type="text" class="form-control" value="Razón social ..."></td>
+							<td width="20%">Raz&oacute;n Social:</td>
+							<td width="80%"><input type="text" class="form-control" value="Raz&oacute;n social ..."></td>
 						</tr>
 						<tr>
 							<td width="20%">Direcci&oacute;n:</td>
 							<td width="80%"><input type="text" class="form-control" value="Calle 123 # 25-50"></td>
 						</tr>
 						<tr>
-							<td width="20%">Número de Tel&eacute;fono:</td>
+							<td width="20%">N�mero de Tel&eacute;fono:</td>
 							<td width="80%"><input type="text" class="form-control" value="555-887744"></td>
 						</tr>
 						<tr>
@@ -425,7 +314,7 @@
 				<div class="modal-footer">
 					<a href="#" class="btn btn-default" data-dismiss="modal">Cancelar</a>
 					<button class="btn btn-default noty" data-dismiss="modal"
-						data-noty-options="{&quot;text&quot;:&quot;Se guardo la información del operador&quot;,&quot;layout&quot;:&quot;top&quot;,&quot;type&quot;:&quot;information&quot;}">
+						data-noty-options="{&quot;text&quot;:&quot;Se guardo la informaci&oacute;n del operador&quot;,&quot;layout&quot;:&quot;top&quot;,&quot;type&quot;:&quot;information&quot;}">
 						Guardar
 					</button>
 				</div>
@@ -437,7 +326,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">�</button>
+					<button type="button" class="close" data-dismiss="modal">?</button>
 					<h3>Modificar Operador</h3>
 				</div>
 				<div class="modal-body">
@@ -447,7 +336,7 @@
 							<td width="80%"><input type="text" class="form-control" value=""></td>
 						</tr>
 						<tr>
-							<td width="20%">Razón Social:</td>
+							<td width="20%">Raz&oacute;n Social:</td>
 							<td width="80%"><input type="text" class="form-control" value=""></td>
 						</tr>
 						<tr>
@@ -455,7 +344,7 @@
 							<td width="80%"><input type="text" class="form-control" value=""></td>
 						</tr>
 						<tr>
-							<td width="20%">Número de Tel&eacute;fono:</td>
+							<td width="20%">N�mero de Tel&eacute;fono:</td>
 							<td width="80%"><input type="text" class="form-control" value=""></td>
 						</tr>
 						<tr>
@@ -519,7 +408,7 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 <!-- application script for index -->
-<script src="js/operador.js"></script>
+<script src="js/usuarioXoperadores.js"></script>
 
 </body>
 </html>
