@@ -1,5 +1,11 @@
 $(document).ready(function(){
 	
+	$('#aCrearOperador').click(function (e) {
+		e.preventDefault();
+		$('#modalCrearOperador').modal('show');
+		$('.mypropover').popover('hide');
+    });
+	
 	$('#aRegistrarUsuariosId').click(function (e) {
 		ruta = '<li><a href="#">Home</a></li><li><a href="#">Gestión de Usuarios</a></li><li><a href="#">Registrar Usuarios</a></li>';
 		$("#divInfoGeneral").hide();
@@ -40,7 +46,16 @@ $(document).ready(function(){
 		$("#ulRuta").html(ruta);
     });
 	
-	
-	
-	
 });
+
+function elimUsuario(e){
+	e.preventDefault();
+    $('#modalElimOperador').modal('show');
+	$('.mypropover').popover('hide');
+}
+
+function modOperador(e){
+	e.preventDefault();
+    $('#modalModificarOperador').modal('show');
+	$('.mypropover').popover('hide');
+}
