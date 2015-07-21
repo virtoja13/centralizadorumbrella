@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	$(".gestion").show():
+	$(".gestion").show();
 	
 	$('#aCrearOperador').click(function (e) {
 		e.preventDefault();
